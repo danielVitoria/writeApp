@@ -3,19 +3,13 @@
 const jwt = require('jsonwebtoken');
 
 async function checkAccountSession(req, res, next) {
-  /**
-   * Necesitamos checkear si el usuario es válido:
-   *  1. Manda header authorization: Bearer token
-   *  2. Es el token valido?
-   *    2.1 token expirado?
-   *    2.2 jwt payload no alterado (coincida la firma)
-   */
+  
   const { authorization } = req.headers;
   if (!authorization) {
     return res.status(401).send();
   }
 
-  // empieza el authorization por Bearer. Tenemos: Bearer JWT_TOKEN
+  
   const [prefix, token] = authorization.split(' ');
   if (prefix !== 'Bearer' || !token) {
     return res.status(401).send();
@@ -27,12 +21,7 @@ async function checkAccountSession(req, res, next) {
       rol
     } = jwt.verify(token, process.env.AUTH_JWT_SECRET);
 console.log(userId)
-    /**
-     * Necesitamos pasar información al siguiente middleware. Esta información es
-     * el userId y el role del usuario.
-     * En express.js para pasar información entre middlewares, lo hacemos a través
-     * del objeto request.
-     */
+    
     req.claims = {
       userId,
       rol,
