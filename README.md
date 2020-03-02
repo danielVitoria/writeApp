@@ -8,6 +8,7 @@ AGREGADOR CONCURSOS LITERARIOS
 Plataforma para búsqueda de concursos literarios e inscripción
 El escritor accede a la plataforma para ver los concursos disponibles. Dispone de toda la información (bases, plazos etc) y permite la inscripción. 
 Cuando finaliza cada evento se publica el resultado de ganadores.
+En la carpeta docs hay incluido un wireframe aproximado de como sería mas o menos la web. El esquema de la base de datos com mysql, reralizado con Workbench. Colección de Postman para poder verificar los endpoints hechos. Ess posible que alguno no esté bien del todo o que haya que crear alguno mas.
 
 ### La plataforma permite:
 
