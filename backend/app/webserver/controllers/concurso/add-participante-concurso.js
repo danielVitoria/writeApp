@@ -6,11 +6,7 @@ const mysqlPool = require("../../../database/mysql-pool");
 async function validate(payload) {
   const schema = Joi.object({
     idconcursos: Joi.string().guid({version: ["uuidv4"]}).required()
-    // userId: Joi.string()
-    //   .guid({
-    //     version: ["uuidv4"]
-    //   })
-    //   .required()
+    
   });
 
   Joi.assert(payload, schema);
@@ -37,7 +33,7 @@ async function getConcurso(idconcursos) {
 }
 
 async function addParticipanteToConcurso(req, res, next) {
-  // /api/notes/37664a0b-0811-4005-8a26-db41b93825a8/tags
+  
   const { idconcursos } = req.params;
   const { userId } = req.claims;
 
@@ -79,15 +75,9 @@ console.log(idconcursos);
       });
     }
 
-    /**
-     * Exercise 1
-     *  Delete tag from a note
-     *    Exercise: Do a proper query to delete a tag from a note for the logged in user
-     * Exercise 2
-     *  Is it possible to delete a tag from note without perform a getProject call?
-     */
+    
     const sqlAddParticipanteToConcurso = `INSERT INTO users_has_concursos SET ?`;
-    // const userId = concursoData.userId;
+    
     console.log(userId);
 
     const userRow = {
