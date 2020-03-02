@@ -11,6 +11,9 @@ Cuando finaliza cada evento se publica el resultado de ganadores.
 
 ### La plataforma permite:
 
+- Una home abierta al publico en la que aparecen los concursos en vigor.
+- Hay dos tipos distintos de usuario, escritor y organizador.
+
 #### ESCRITORES:
 - Registro y gestión del perfil (cambios…)
 - Búsqueda concursos por palabra clave en el titulo del concurso  
