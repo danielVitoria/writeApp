@@ -44,9 +44,7 @@ async function createAccount(req, res, next) {
     return res.status(400).send(e);
   }
 
-  /**
-   * At this point, all data is valid
-   */
+ 
   const now = new Date();
   const created_at = now.toISOString().replace('T', ' ').substring(0, 19);
   const userId = uuidV4();
@@ -68,14 +66,7 @@ async function createAccount(req, res, next) {
 
     res.status(201).send();
 
-    /**
-     * Nos gustaría mandar un email al usuario para darle la bienvenida a la app
-     * La operación de mandar email no es lo más importante en el flujo de usuario
-     * de "crear cuenta". Lo importante es que la cuenta se cree.
-     * Por ese motivo, independientemente que el email se envíe o no, no influye
-     * en que la cuenta se cree, y pondremos un try / catch especial para el flujo de
-     * "enviar email" para que no afecte al flujo prirncipal de "crear cuenta"
-     */
+   
     try {
       await sendWelcomeEmail(accountData.email);
     } catch (e) {
