@@ -13,13 +13,13 @@ Cuando finaliza cada evento se publica el resultado de ganadores.
 
 - Una home abierta al publico en la que aparecen los concursos en vigor.
 - Hay dos tipos distintos de usuario, escritor y organizador.
+- Búsqueda concursos por palabra clave en el titulo del concurso  
+- filtro por categoria de los concursos (5 categorias: novela, poesia, relato corto, cuento, ensayos)
 
 #### ESCRITORES:
 - Registro y gestión del perfil (cambios…)
-- Búsqueda concursos por palabra clave en el titulo del concurso  
-- filtro por categoria de los concursos (5 categorias: novela, poesia, relato corto, cuento, ensayos)
 - Inscripción en el concurso
-- subir pdf de la obra usando cloudinary
+- subir pdf de la obra al concurso usando cloudinary
 - Rating del evento (después, si ha participado)
 
 #### ORGANIZADORES (editoriales, ayuntamientos, círculos literarios…):
