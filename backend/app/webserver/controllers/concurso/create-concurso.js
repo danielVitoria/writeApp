@@ -66,7 +66,7 @@ async function createConcurso(req, res, next) {
     primerPremio,
     fechaPremiados
   } = concursoData;
-//   const { nombreConcurso, categoria, bases, fechaVencimiento, primerPremio, fechaPremiados} = concursoData;
+
 
 
   const idconcursos = uuidV4();
