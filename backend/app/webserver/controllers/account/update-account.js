@@ -45,13 +45,7 @@ async function updateAccount(req, res, next) {
   let connection;
   try {
     connection = await mysqlPool.getConnection();
-    // const updated_At = new Date()
-    //   .toISOString()
-    //   .replace("T", " ")
-    //   .substring(0, 19);
-    /**
-     * Exercise: modify upated_at column to keep track when this record was modified
-     */
+    
     const sqlUpdateUser = `UPDATE users
       SET dni = ?,
         email = ?,
