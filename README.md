@@ -1,5 +1,6 @@
 # writingg
 Writingg. La plataforma de concursos literarios donde organizadores y escritores conectan
+Esta plataforma es para correr en local, es decir, en puertos 3000 y 8000, no tiene que lanzarse a produccion real.
 
 ## ¿Qué es?:
 AGREGADOR CONCURSOS LITERARIOS
