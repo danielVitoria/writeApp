@@ -21,9 +21,9 @@ async function addGanadorToConcurso(req, res, next) {
   } catch (e) {
     return res.status(400).send(e);
   }
-  //const concursos_idconcursos = idconcursos;
+  
   const users_idusers = userId;
-  //const idconcursos = iDconcursos;
+ 
   console.log(idconcursos);
   const { ganador, segundo, tercero } = concursoData;
 
@@ -39,10 +39,7 @@ async function addGanadorToConcurso(req, res, next) {
         AND users_idusers = ?
         AND deleted_at IS NULL`;
 
-    // const deleted_at = new Date()
-    //   .toISOString()
-    //   .substring(0, 19)
-    //   .replace("T", " ");
+    
     const [deletedStatus] = await connection.execute(sqlQuery, [
       ganador,
       segundo,
