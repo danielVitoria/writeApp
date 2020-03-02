@@ -14,15 +14,6 @@ async function validate(payload) {
   Joi.assert(payload, schema);
 }
 
-/**
- * 1. Validar datos (400 Bad request :( )
- * 2. Query a la bbdd para ver si existe el usuario con el email dado
- *  2.1 Mirar si la pass es correcta
- * 3. Crear token JWT:
- *  3.1 Que expire en 15 min
- *  3.2 Que almacene el user id y el role del usuario
- * 4. Devolver los "datos" del usuario
- */
 async function login(req, res, next) {
   const accountData = { ...req.body };
   try {
@@ -34,11 +25,11 @@ async function login(req, res, next) {
   const sqlQuery = `SELECT idusers, dni, email, password, rol
     FROM users
     WHERE email = '${accountData.email}'`;
-  // pedir conexion + hacer query + release
+  
 
   try {
     const connection = await mysqlPool.getConnection();
-    // connection.query devuelve: [[filaEncontrada], [c1Metadata, cNmetadata]]
+    
     const [rows] = await connection.query(sqlQuery);
     connection.release();
 
@@ -49,7 +40,7 @@ async function login(req, res, next) {
     const user = rows[0];
 
     try {
-      // *  2.1 Mirar si la pass es correcta
+      
       const isPasswordOk = await bcrypt.compare(accountData.password, user.password);
       if (!isPasswordOk) {
         return res.status(401).send();
